@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Ngando Zéphirin Olivier | Portfolio</title>
+    <meta name="description" content="Portfolio de Ngando Zéphirin Olivier, étudiante en DUT Génie Informatique à l'IUT de Douala, développeuse web passionnée.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00d2ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00d2ff;
+        }
+
+        /* Container général */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #1a1a2e;
+            border-left: 5px solid #00d2ff;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #00d2ff;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #00d2ff;
+            color: #1a1a2e;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* Compétences */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-card {
+            background: #f0f4f8;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-3px);
+            background: #00d2ff;
+            color: white;
+        }
+
+        /* Projets */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            background: #e0e0e0;
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+        }
+
+        /* Contact */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            word-break: break-all;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            min-width: 40px;
+        }
+
+        .contact-item a {
+            color: #1a1a2e;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #00d2ff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #1a1a2e;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">NZO | Portfolio</div>
+            <div class="nav-links">
+                <a href="#accueil">Accueil</a>
+                <a href="#formation">Formation</a>
+                <a href="#competences">Compétences</a>
+                <a href="#projets">Projets</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero / Accueil -->
+        <section id="accueil" class="hero">
+            <div class="container">
+                <h1>Ngando Zéphirin Olivier</h1>
+                <p>Étudiante en DUT Génie Informatique | Développeuse Web passionnée</p>
+                <div class="badge">✨ Cloud Computing & Développement Web ✨</div>
+                <p style="margin-top: 1.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Motivée par l'apprentissage continu et les nouvelles technologies, 
+                    je développe progressivement mes compétences dans la conception 
+                    et le développement d'applications web.
+                </p>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Formation -->
+            <section id="formation">
+                <h2>🎓 Formation</h2>
+                <div style="margin-bottom: 1rem;">
+                    <h3>DUT Génie Informatique (Première année)</h3>
+                    <p>Institut Universitaire de Technologie de Douala — 2025 - 2026</p>
+                </div>
+                <div>
+                    <h3>Baccalauréat C</h3>
+                    <p>Lycée Bilingue de Logpom II — Promotion 2025</p>
+                </div>
+            </section>
+
+            <!-- Compétences techniques -->
+            <section id="competences">
+                <h2>💻 Compétences techniques</h2>
+                <div class="skills-grid">
+                    <span class="skill-card">HTML5</span>
+                    <span class="skill-card">CSS3</span>
+                    <span class="skill-card">JavaScript</span>
+                    <span class="skill-card">MySQL</span>
+                    <span class="skill-card">Design Responsive</span>
+                    <span class="skill-card">Git / GitHub</span>
+                    <span class="skill-card">Vercel (Déploiement)</span>
+                </div>
+            </section>
+
+            <!-- Projets -->
+            <section id="projets">
+                <h2>🚀 Mes Projets</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Site Web de Présentation Personnelle</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <p>Conception d'un site responsive présentant mon parcours, compétences et centres d'intérêt.</p>
+                        <p><strong>Compétences :</strong> Intégration web, design responsive, manipulation du DOM.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Application de Gestion des Étudiants</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <p>Application CRUD pour ajouter, modifier, supprimer et consulter les étudiants.</p>
+                        <p><strong>Compétences :</strong> Gestion de bases de données, CRUD, modélisation.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Système de Gestion de Bibliothèque</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                        </div>
+                        <p>Base de données pour gérer livres, emprunts et adhérents d'une bibliothèque universitaire.</p>
+                        <p><strong>Compétences :</strong> Analyse des besoins, modélisation Merise, requêtes SQL.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Rapport d'Étude sur le Cloud Computing</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Veille technologique</span>
+                            <span class="tech-tag">Recherche documentaire</span>
+                        </div>
+                        <p>Étude des concepts fondamentaux du cloud (IaaS, PaaS, SaaS) et applications en entreprise.</p>
+                        <p><strong>Compétences :</strong> Recherche, analyse technique, rédaction de rapports.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projet professionnel -->
+            <section>
+                <h2>🎯 Projet professionnel</h2>
+                <p style="font-size: 1.1rem;">
+                    Devenir développeuse <strong>full-stack</strong> et concevoir des applications web modernes, 
+                    performantes et adaptées aux besoins des utilisateurs.
+                </p>
+            </section>
+
+            <!-- Contact -->
+            <section id="contact">
+                <h2>📫 Contact</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <a href="mailto:Ngandoolivier32@gmail.com">Ngandoolivier32@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>676 616 467</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ngando Zéphirin Olivier | Portfolio développé avec ❤️ pour le TP Web & UX/UI Design</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem;">IUT de Douala - DUT Génie Informatique</p>
+    </footer>
+</body>
+</html>
